@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d26yreicnp4yk"]
+
+[ext_resource type="Script" path="res://objects/itemGloves.gd" id="1_ndbjf"]
+[ext_resource type="Texture2D" uid="uid://w1j16gxwip0j" path="res://assets/icons/gloves.png" id="2_ba68k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q48dj"]
+size = Vector2(40, 30)
+
+[node name="ItemGloves" type="Area2D"]
+script = ExtResource("1_ndbjf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -9)
+shape = SubResource("RectangleShape2D_q48dj")
+
+[node name="Gloves" type="Sprite2D" parent="."]
+position = Vector2(1, -11)
+texture = ExtResource("2_ba68k")

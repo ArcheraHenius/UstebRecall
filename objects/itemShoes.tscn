@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://w21mhw1evy47"]
+
+[ext_resource type="Script" path="res://objects/itemShoes.gd" id="1_1sygd"]
+[ext_resource type="Texture2D" uid="uid://cax4olkkinee1" path="res://assets/icons/dash.png" id="2_b4x1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q48dj"]
+size = Vector2(40, 30)
+
+[node name="ItemShoes" type="Area2D"]
+script = ExtResource("1_1sygd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -9)
+shape = SubResource("RectangleShape2D_q48dj")
+
+[node name="Dash" type="Sprite2D" parent="."]
+position = Vector2(1, -10)
+texture = ExtResource("2_b4x1a")

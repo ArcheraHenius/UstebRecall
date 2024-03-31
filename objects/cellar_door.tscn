@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://su8x0echbvvq"]
+
+[ext_resource type="Script" path="res://objects/cellar_door.gd" id="1_yx4vo"]
+[ext_resource type="Texture2D" uid="uid://4nd11m2tn6aw" path="res://assets/legacy_fantasy/Buildings.png" id="2_w3ppq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q48dj"]
+size = Vector2(55, 17.5)
+
+[node name="CellarDoor" type="Area2D"]
+script = ExtResource("1_yx4vo")
+
+[node name="Buildings" type="Sprite2D" parent="."]
+position = Vector2(-24, -9)
+rotation = 1.5708
+scale = Vector2(0.480001, 1)
+texture = ExtResource("2_w3ppq")
+region_enabled = true
+region_rect = Rect2(344, 120, 32, 56)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Buildings"]
+disable_mode = 1
+collision_layer = 3
+collision_mask = 2
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/RigidBody2D"]
+position = Vector2(-0.520832, 1.5)
+rotation = -1.5708
+scale = Vector2(1, 2.08333)
+shape = SubResource("RectangleShape2D_q48dj")

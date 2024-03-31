@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2qpj3xynx4vm"]
+
+[ext_resource type="Script" path="res://objects/cellarDoor.gd" id="1_83wlc"]
+[ext_resource type="Texture2D" uid="uid://4nd11m2tn6aw" path="res://assets/legacy_fantasy/Buildings.png" id="2_vct34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q48dj"]
+size = Vector2(52, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivlpw"]
+size = Vector2(54, 14.5)
+
+[node name="CellarDoor" type="Area2D"]
+script = ExtResource("1_83wlc")
+
+[node name="Buildings" type="Sprite2D" parent="."]
+position = Vector2(-22, -8)
+rotation = 1.5708
+scale = Vector2(0.480001, 1)
+texture = ExtResource("2_vct34")
+region_enabled = true
+region_rect = Rect2(344, 120, 32, 56)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-23, -11.5)
+shape = SubResource("RectangleShape2D_q48dj")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="CollisionShape2D"]
+gravity_scale = 0.0
+can_sleep = false
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/RigidBody2D"]
+position = Vector2(0, 2.75)
+shape = SubResource("RectangleShape2D_ivlpw")
